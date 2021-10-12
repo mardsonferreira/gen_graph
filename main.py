@@ -6,7 +6,7 @@ from graphviz import Graph
 # The function responsible for load data into the graph
 ###
 
-def readInputData(data):
+def read_input_data(data):
     graph = {'nodes':set(), 'edges':[]}
     
     f = open(data, 'r')
@@ -35,7 +35,7 @@ def readInputData(data):
 # Function responsible for saving and rendering the source code
 ###
 
-def drawGraph(graph, title="", view=False):
+def draw_graph(graph, title="", view=False):
     dot = Graph(comment=title)
 
     for node in graph['nodes']:
@@ -58,6 +58,6 @@ base = os.path.basename(data)
 
 filename, file_extension = os.path.splitext(base)
 
-graph = readInputData(data)
+graph = read_input_data(data)
 
-drawGraph(graph, filename, True)
+draw_graph(graph, filename, True)
